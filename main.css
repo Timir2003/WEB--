@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(174, 229, 247);
+    color: rgb(60, 2, 2);
+    font-family: Arial; 
+    margin: 0px;
+}
+main {
+    background-color: rgb(174, 229, 247);
+    color: rgb(68, 21, 21);
+    font-family: Arial; 
+    margin: 0px;
+}
+footer {
+    background-color: black; 
+    color: lightgreen; 
+    padding: 20px; 
+    font-size: 14pt; 
+    font-style: italic; 
+    text-align: right;
+}
+header {
+    background-color: black; 
+    color: lightgreen; 
+    padding: 20px; 
+    font-size: 16pt;
+}
