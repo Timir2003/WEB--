@@ -24,3 +24,27 @@ header {
     padding: 20px; 
     font-size: 16pt;
 }
+a {
+    color: green;
+    text-decoration: none;
+    text-shadow: 3px 10px 5px greenyellow;
+}
+a:link { 
+    color: rgb(7, 24, 7);
+    text-decoration: none;
+    text-shadow: 3px 10px 5px rgb(103, 133, 58);
+}
+a:visited {
+    color: rgb(151, 34, 34);
+    text-decoration: none;
+    text-shadow: 3px 10px 5px rgb(206, 91, 91);
+}
+a:hover {
+    color: red;
+    text-decoration: underline;
+    text-shadow: 3px 10px 5px rgb(254, 64, 64);
+}
+a:active {
+    color: black;
+    opacity: 0.3;
+}
