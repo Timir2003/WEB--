@@ -3,6 +3,7 @@ body {
     color: rgb(60, 2, 2);
     font-family: Arial; 
     margin: 0px;
+    position: relative;
     z-index: -5;
 }
 main {
@@ -10,6 +11,7 @@ main {
     color: rgb(68, 21, 21);
     font-family: Arial; 
     margin: 10px 20px 45px;
+    position: relative;
     z-index: -5;
 }
 footer {
