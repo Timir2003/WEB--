@@ -50,3 +50,23 @@ a:active {
     color: black;
     opacity: 0.3;
 }
+div.menu {
+    border: 6px solid #08ef08ac;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+div.menu:hover {
+    background-color: #4b524b79;
+    box-shadow: 0 0 15px #000000ac;
+}
+div.menu:active {
+    color: black;
+    opacity: 0.3;
+}
+h1 {
+    color: #013220;
+    padding: 30px;
+    font-size: 35px;
+    text-align:center
+}
