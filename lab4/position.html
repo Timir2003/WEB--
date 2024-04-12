@@ -17,11 +17,24 @@
             background-color: white;
             border: 1px dotted darkgreen;
             margin: 15px;
-        }
-        .position-relative{
             position: relative;
-            left: -14px;
-            top: -45px;
+            z-index: 1;
+        }
+        .position-relative {
+            position: relative;
+            left: 150px;
+            top: -130px;
+            z-index: -1;
+        }
+        .position-relative:hover {
+            position: relative;
+            left: 150px;
+            top: -130px;
+            z-index: 2;
+        }
+        .position-absolute {
+            position: relative;
+            left: 300px;
             z-index: -1;
         }
     </style>
@@ -41,7 +54,7 @@
         <div class="position-relative">relative</div>
         <div>static</div>
         <div>static</div>
-        <div>static</div>
+        <div class="position-absolute">absolute</div>
         <div>static</div>
         <div>static</div>
         <div>static</div>

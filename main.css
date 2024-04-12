@@ -3,12 +3,14 @@ body {
     color: rgb(60, 2, 2);
     font-family: Arial; 
     margin: 0px;
+    z-index: -5;
 }
 main {
     background-color: rgb(174, 229, 247);
     color: rgb(68, 21, 21);
     font-family: Arial; 
     margin: 10px 20px 45px;
+    z-index: -5;
 }
 footer {
     background-color: black; 
