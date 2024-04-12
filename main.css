@@ -27,22 +27,22 @@ header {
 a {
     color: green;
     text-decoration: none;
-    text-shadow: 3px 10px 5px greenyellow;
+    text-shadow: 1px 5px 2px greenyellow;
 }
 a:link { 
     color: rgb(7, 24, 7);
     text-decoration: none;
-    text-shadow: 3px 10px 5px rgb(103, 133, 58);
+    text-shadow: 1px 5px 2px rgb(103, 133, 58);
 }
 a:visited {
     color: rgb(151, 34, 34);
     text-decoration: none;
-    text-shadow: 3px 10px 5px rgb(206, 91, 91);
+    text-shadow: 1px 5px 2px rgb(206, 91, 91);
 }
 a:hover {
     color: red;
     text-decoration: underline;
-    text-shadow: 3px 10px 5px rgb(254, 64, 64);
+    text-shadow: 1px 5px 2px rgb(254, 64, 64);
 }
 a:active {
     color: black;
