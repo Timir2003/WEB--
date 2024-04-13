@@ -53,6 +53,14 @@
             let hel = 'Привет, дорогой друг! \nНадеюсь ты надолго.';
             alert(hel);
         }
+        function changeOutput(buttonNum, backColor, textColor, borderRadius, borderWidth) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка '+ buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderRadius = borderRadius;
+            output.style.borderWidth = borderWidth;
+        }
     </script>
 
     <style>
@@ -67,6 +75,11 @@
             margin: 20px;
             padding: 20px;
             display: inline-block;
+        }
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
         }
     </style>
 </head>
@@ -84,6 +97,15 @@
         <div class="message" onclick="showProis()">Найти произведение чисел</div>
         <div class="message" onclick="showDelen()">Найти деление чисел</div>
         <div class="message" onclick="showAutor()">Узнать, кто автор страницы</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', '2px', '6px')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'white', '3px', '5px')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'black', 'red', '5px', '4px')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'pink', 'black', '7px', '3px')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
     <footer ondblclick="showHel()">
