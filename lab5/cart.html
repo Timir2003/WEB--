@@ -25,7 +25,8 @@
             output.innerHTML = 'Общая цена: ' + result + ' р';
         }
         function changeClear() {
-            document.getElementsByName(changeOutput).reset();
+            document.getElementById('output').textContent = '';
+            document.querySelectorAll('input[type="number"]').forEach(input => input.value = '');
         }
     </script>
 
@@ -82,6 +83,7 @@
             <div>
                 <input type="button" value="Расчитать" onclick="changeOutput()">
                 <input type="button" value="Очистить" onclick="changeClear()">
+                
             </div>
             <div id="output"></div>
         </div>
