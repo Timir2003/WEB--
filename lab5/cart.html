@@ -25,8 +25,11 @@
             output.innerHTML = 'Общая цена: ' + result + ' р';
         }
         function changeClear() {
-            document.getElementById('output').textContent = '';
-            document.querySelectorAll('input[type="number"]').forEach(input => input.value = '');
+            document.getElementById('numberA').value = '';
+            document.getElementById('numberB').value = '';
+            document.getElementById('numberC').value = '';
+            document.getElementById('numberD').value = '';
+            document.getElementById('output').remove();
         }
     </script>
 
