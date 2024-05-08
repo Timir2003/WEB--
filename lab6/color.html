@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Остапенко Тимур Ростиславович. «перебор цветов»</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-48x48.icon">
+
+    <script>
+       function changeColor(div) {
+        if(div.style.backgroundColor == 'yellow') {
+        div.style.backgroundColor = 'red';
+        document.getElementById('color-name').innerHTML = 'красный';
+       }
+       else if(div.style.backgroundColor == 'red') {
+        div.style.backgroundColor = 'black';
+        document.getElementById('color-name').innerHTML = 'чёрный';
+       }
+       else if(div.style.backgroundColor == 'black') {
+        div.style.backgroundColor = 'green';
+        document.getElementById('color-name').innerHTML = 'зелёный';
+       }
+       else if(div.style.backgroundColor == 'green') {
+        div.style.backgroundColor = 'purple';
+        document.getElementById('color-name').innerHTML = 'фиолетовый';
+       }
+       else if(div.style.backgroundColor == 'purple') {
+        div.style.backgroundColor = 'blue';
+        document.getElementById('color-name').innerHTML = 'синий';
+       }
+       else {
+        div.style.backgroundColor = 'yellow';
+        document.getElementById('color-name').innerHTML = 'жёлтый';
+       }
+    }
+    </script>
+
+    <style>
+      .color{
+            text-align:center;
+            width: 300px;
+            border: 1px solid;
+            border-radius: 3px;
+            vertical-align: top;
+            margin: 10px auto;
+            background: yellow;
+      }
+    </style>
+</head>
+
+<body>
+    <header>
+        НГТУ ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">жёлтый</span><br>
+            Сделайте двойной щелчок, чтобы сменить.
+        </div>
+    </main>
+
+    <footer>
+        &copy; Тимур Остапенко, ФБИ-23, 2 курс, 2024 
+    </footer>
+</body>
+</html>
