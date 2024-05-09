@@ -12,26 +12,32 @@
        function changeColor(div) {
         if(div.style.backgroundColor == 'yellow') {
         div.style.backgroundColor = 'red';
+        div.style.color = "yellow";
         document.getElementById('color-name').innerHTML = 'красный';
        }
        else if(div.style.backgroundColor == 'red') {
         div.style.backgroundColor = 'black';
+        div.style.color = "white";
         document.getElementById('color-name').innerHTML = 'чёрный';
        }
        else if(div.style.backgroundColor == 'black') {
         div.style.backgroundColor = 'green';
+        div.style.color = 'white';
         document.getElementById('color-name').innerHTML = 'зелёный';
        }
        else if(div.style.backgroundColor == 'green') {
         div.style.backgroundColor = 'purple';
+        div.style.color = 'white';
         document.getElementById('color-name').innerHTML = 'фиолетовый';
        }
        else if(div.style.backgroundColor == 'purple') {
         div.style.backgroundColor = 'blue';
+        div.style.color = 'white';
         document.getElementById('color-name').innerHTML = 'синий';
        }
        else {
         div.style.backgroundColor = 'yellow';
+        div.style.color = 'black';
         document.getElementById('color-name').innerHTML = 'жёлтый';
        }
     }
@@ -39,6 +45,7 @@
 
     <style>
       .color{
+            color: black;
             text-align:center;
             width: 300px;
             border: 1px solid;
@@ -46,6 +53,8 @@
             vertical-align: top;
             margin: 10px auto;
             background: yellow;
+            cursor: pointer;
+            transition: 2s;
       }
     </style>
 </head>
