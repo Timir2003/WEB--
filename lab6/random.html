@@ -38,6 +38,10 @@
             else if (userNumber > 100) {
                 message.innerHTML = 'Доступный диапазон от 1 до 100';
             }
+            else if (isNaN(userNumber)) {
+                message.innerHTML = 'Нет числа';
+                count = count - 1
+            }
             else if (userNumber > number) {
                 message.innerHTML = 'Вы ввели слишком большое число';
             }
@@ -58,7 +62,7 @@
             let screens = document.getElementsByClassName('game');
             screens[1].style.display = 'block';
             screens[2].style.display = 'none';
-            document.getElementById('result').value = ' ';
+            document.getElementById('user-number').innerHTML = '';
         }
     </script>
 
