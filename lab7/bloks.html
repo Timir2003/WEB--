@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Остапенко Тимур Ростиславович. Фильтр</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-48x48.icon">
+
+    <script>
+    function addNewBlock() {
+        let newBlock = document.createElement('div');
+        newBlock.style.background = 'green';
+        newBlock.style.height = '40px';
+        newBlock.style.width = '100px';
+        newBlock.style.border = '2px solid black';
+        newBlock.style.margin = '10px';
+
+        document.querySelector('main').appendChild(newBlock);
+    }
+
+    function addNewBlocks() {
+        let main = document.querySelector('main');
+        let blocksCount = document.getElementById('blocksCount').value;
+        for(let i = 0; i < blocksCount; i++) {
+            let newBlock = document.createElement('div');
+            newBlock.style.background = 'green';
+            newBlock.style.height = '40px';
+            newBlock.style.width = '100px';
+            newBlock.style.border = '2px solid black';
+            newBlock.style.margin = '10px';
+            newBlock.innerHTML = `Блок № ${i+1}: 2*${i}<sup>${i ** 2}</sup> = ${2 * i**2}` ;
+           main.appendChild(newBlock);
+        }
+    }
+    
+    function add20_50() {
+        let main = document.querySelector('main');
+        for(let i = 20; i<=50; i+=2.5) {
+            let newBlock = document.createElement('div');
+            newBlock.style.background = 'white';
+            newBlock.style.width = '200px';
+            newBlock.style.height = '40px';
+            newBlock.style.border = '1px solid';
+            newBlock.innerHTML = `${i}`;
+           main.appendChild(newBlock);
+        }
+    }
+    </script>
+
+    <style>
+     
+    </style>
+</head>
+
+<body>
+    <header>
+        НГТУ ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+       <button onclick="addNewBlock()">Добавить блок</button>
+       <input type="number" id="blocksCount" placeholder="Количество блоков">
+       <button onclick="addNewBlocks()">Добавить блоки</button>
+       <button onclick="add20_50()">>20=> 50</button>
+    </main> 
+
+    <footer>
+        &copy; Тимур Остапенко, ФБИ-23, 2 курс, 2024 
+    </footer>
+</body>
+</html>
