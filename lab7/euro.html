@@ -2,43 +2,57 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Остапенко Тимур Ростиславович. Фильтр</title>
+    <title>Остапенко Тимур Ростиславович. Курс евро</title>
     <link rel="stylesheet" href="../main.css">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-32x32.png">
     <link rel="icon" href="../favicon-48x48.icon">
 
     <script>
-        async function getEuroExchangeRate() {
+        function getEuroExchangeRate() {
             const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
-            const response = await fetch(url);
-            const data = await response.json();
-            const euroRate = data.Valute.EUR.Value;
-            const prevEuroRate = data.Valute.EUR.Previous;
-            const dateStr = data.Date;
-            const date = new Date(dateStr);
-            const prevDate = new Date(date.getTime() - 24 * 60 * 60 * 1000);
-            const rateChange = euroRate - prevEuroRate;
-            const changeMessage = rateChange > 0 ? 'Курс евро поднялся' : 'Курс евро опустился';
+            fetch(url)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(json){
+                    const euroRate = json.Valute.EUR.Value;
+                    const euroRateMessage = `Текущий курс евро: ${euroRate} рублей`;
+                    const date = new Date(json.Date);
+                    const dateMessage = `Дата запроса: ${date.toLocaleDateString()}`;
+                    const previousDate = new Date(json.PreviousDate);
+                    const previousDateMessage = `Дата предыдущего запроса: ${previousDate.toLocaleDateString()}`;
+                    const previousEuroRate = json.Valute.EUR.Previous;
+                    const difference = euroRate - previousEuroRate;
+                    const differenceMessage = difference > 0 ? `Курс поднялся на ${difference.toFixed(2)} рублей` : `Курс опустился на ${difference.toFixed(2)} рублей`;
+                    showEuroRate(euroRateMessage, dateMessage, previousDateMessage, differenceMessage);
+                })
 
-            const euroRateDiv = document.getElementById('euro-rate');
-            euroRateDiv.innerHTML = `
-                <h2>Курс евро</h2>
-                <p>Дата запроса: ${dateStr}</p>
-                <p>Текущий курс: ${euroRate.toFixed(2)} рублей</p>
-                <p>Курс за ${prevDate.toLocaleDateString()}: ${prevEuroRate.toFixed(2)} рублей</p>
-                <p>${changeMessage} на ${Math.abs(rateChange.toFixed(2))} рублей</p>
-                <p>Источник данных: <a href="https://www.cbr-xml-daily.ru/" target="_blank">www.cbr-xml-daily.ru</a></p>
-            `;
+        }
+
+        function showEuroRate(euroRateMessage, dateMessage, previousDateMessage, differenceMessage) {
+            const euroRateElement = document.createElement('div');
+            euroRateElement.classList.add('euro-rate');
+            euroRateElement.innerHTML = `
+                <p>${euroRateMessage}</p>
+                <p>${dateMessage}</p>
+                <p>${previousDateMessage}</p>
+                <p>${differenceMessage}</p>
+                <p>Источник данных: <a href="https://www.cbr-xml-daily.ru/">Центральный банк РФ</a></p>`
+            ;
+            document.body.appendChild(euroRateElement);
         }
     </script>
 
     <style>
-      #euro-rate {
+      .euro-rate {
             border: 1px solid #ccc;
+            border-radius: 10px;
+            background: lightgray;
             padding: 20px;
             font-family: Arial, sans-serif;
             text-align: center;
+            width: 400px;
         }
     </style>
 </head>
@@ -50,7 +64,7 @@
 
     <main>
         <button onclick="getEuroExchangeRate()">Получить курс евро</button>
-        <div id="euro-rate"></div>
+
     </main> 
 
     <footer>

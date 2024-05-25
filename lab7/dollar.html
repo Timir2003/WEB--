@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Остапенко Тимур Ростиславович. Фильтр</title>
+    <title>Остапенко Тимур Ростиславович. Курс доллара</title>
     <link rel="stylesheet" href="../main.css">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-32x32.png">
@@ -26,11 +26,12 @@
                 sum += exchange[i];
             }
             
-
             let average = sum / exchange.length;
             average = average.toFixed(2);
             let detailDiv = document.getElementById('detail');
             detailDiv.innerText = `Среднее значение: ${average}`;
+            let button = document.getElementById('show-button');
+            button.style.display = 'none';
         }
     </script>
 
